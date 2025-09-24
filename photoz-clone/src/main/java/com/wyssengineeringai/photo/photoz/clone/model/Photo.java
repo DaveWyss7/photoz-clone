@@ -1,4 +1,4 @@
-package com.wyssengineeringai.photo.photoz.clone;
+package com.wyssengineeringai.photo.photoz.clone.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
@@ -8,6 +8,8 @@ public class Photo {
 
     @NotEmpty
     private String fileName;
+
+    private String contentType;
 
     @JsonIgnore
     private byte[] data;
@@ -36,6 +38,14 @@ public class Photo {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 
     public String getFileName() {
